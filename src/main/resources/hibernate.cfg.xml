@@ -8,8 +8,8 @@
         <!-- Настройки подключения к базе данных -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/studs</property>
-        <property name="hibernate.connection.username">s367410</property>
-        <property name="hibernate.connection.password">kXPwKMERo7cDIbJt</property>
+        <property name="hibernate.connection.username">s****</property>
+        <property name="hibernate.connection.password">YOUR PASSWORD</property>
 
         <!--        &lt;!&ndash; Другие настройки Hibernate &ndash;&gt;-->
         <!--        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>-->
