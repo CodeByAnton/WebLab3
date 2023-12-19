@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'com.annton'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitVersion = '5.9.2'
+}
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    //Database
+    implementation('org.hibernate:hibernate-core:6.3.1.Final')
+    implementation('org.postgresql:postgresql:42.6.0')
+//    implementation ('org.hibernate.orm:hibernate-core')
+//    implementation ('jakarta.transaction:jakarta.transaction-api')
+
+    //	Primefaces deps
+    implementation 'org.primefaces:primefaces:13.0.3:jakarta'
+
+    //Jakarta EE
+    implementation 'jakarta.platform:jakarta.jakartaee-web-api:10.0.0'
+    implementation 'jakarta.faces:jakarta.faces-api:4.0.1'
+//    implementation 'org.glassfish:jakarta.faces:4.0.1'
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+}
+
+test {
+    useJUnitPlatform()
+}

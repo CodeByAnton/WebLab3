@@ -1,0 +1,37 @@
+<html xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+
+>
+<h:head>
+    <h:outputStylesheet library="css" name="style.css"/>
+    <title>Start page</title>
+</h:head>
+
+<h:body>
+    <div class="description">
+        <h1>Выполнил: Мольдон Антон Сергеевич, Группа: P3211, Вариант: 4139</h1>
+    </div>
+
+    <div class="clock">
+        <p class="datetime">
+            <span class="datetime_time"> </span>
+            <br/>
+            <span class="datetime_date">  </span>
+        </p>
+    </div>
+
+    <div class="centered-container">
+        <p class="to_main_button">
+
+            <h:form>
+                <h:commandButton action="main" class="button" value="Main page"/>
+            </h:form>
+        </p>
+    </div>
+
+
+
+
+    <h:outputScript library="js" name="clock.js"/>
+</h:body>
+</html>

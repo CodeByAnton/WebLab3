@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+        <!-- Настройки подключения к базе данных -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/studs</property>
+        <property name="hibernate.connection.username">s367410</property>
+        <property name="hibernate.connection.password">kXPwKMERo7cDIbJt</property>
+
+        <!--        &lt;!&ndash; Другие настройки Hibernate &ndash;&gt;-->
+        <!--        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>-->
+        <!--        <property name="hibernate.show_sql">true</property>-->
+        <!--        <property name="hibernate.format_sql">true</property>-->
+
+        <!-- Маппинг классов сущностей -->
+        <mapping class="com.annton.web_lab3.Result"/>
+
+    </session-factory>
+
+</hibernate-configuration>

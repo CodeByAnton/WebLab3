@@ -1,0 +1,132 @@
+/* Стили для элемента body */
+body {
+    background-color: #f7f1f1;
+    font-family: Arial, sans-serif;
+    margin: 5px;
+    /* padding: 10px; */
+}
+
+.description{
+    text-align: center;
+    font-style: italic;
+
+}
+
+.clock {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 20px; /* Регулирует отступ сверху */
+}
+
+.datetime {
+    font-size: 24px;
+    color: #333; /* Цвет текста */
+}
+
+.datetime_time {
+    font-weight: bold;
+}
+
+.datetime_date {
+    font-style: italic;
+    color: #666; /* Цвет даты */
+}
+
+
+.canvas {
+    margin: auto;
+    height: 70%;
+    width: 70%;
+
+}
+
+.to_main_button {
+    text-align: center; /* Выравнивает содержимое по центру внутри <p> */
+}
+
+.button, .button-submit {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1c1010; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    text-decoration: none; /* Убирает подчеркивание ссылки */
+    border-radius: 25px; /* Закругляет углы кнопки */
+    border: none; /* Убирает границы кнопки */
+    cursor: pointer; /* Изменяет вид курсора при наведении */
+}
+
+.button:hover, .button-submit:hover {
+    background-color: #562e34; /* Изменение цвета при наведении */
+}
+
+/* Стили для спиннера R */
+.data_handler .ui-spinner {
+    width: 80px; /* Уменьшаем ширину спиннера */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+/* Стили для кнопок изменения значения R */
+.data_handler .ui-spinner-button {
+    background-color: #000; /* Цвет фона кнопок */
+    color: #fff; /* Цвет текста на кнопках */
+    border: none; /* Убираем границу */
+    width: 40px; /* Уменьшаем ширину кнопок */
+    height: 20px; /* Устанавливаем высоту кнопок */
+    cursor: pointer; /* Изменяем вид курсора при наведении */
+}
+
+/* Стили при наведении на кнопки */
+.data_handler .ui-spinner-button:hover {
+    background-color: #333; /* Изменяем цвет фона при наведении */
+}
+/* Стили для таблицы с идентификатором result-table */
+#result-table {
+    margin: 30px auto;
+    border-collapse: collapse;
+    width: 60%;
+    border: 1px solid black;
+}
+
+
+/* Стили для заголовков и ячеек таблицы с идентификатором result-table */
+#result-table th,
+#result-table td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.top {
+    display: flex;
+}
+
+.data_handler,
+.graphik {
+    flex: 1; /* Оба блока равномерно распределяют доступное пространство */
+    padding: 20px; /* Добавляем отступы по желанию */
+}
+
+.data_handler {
+    order: 1; /* Порядок элемента - справа */
+    text-align: center;
+
+}
+
+.graphik {
+    order: 2; /* Порядок элемента - слева */
+    text-align: center;
+}
+.radio-container {
+    display: flex;
+    justify-content: center;
+}
+.validYMessage,.validXMessage{
+    color: red;
+    font-size: smaller;
+}
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

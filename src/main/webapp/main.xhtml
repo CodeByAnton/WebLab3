@@ -1,0 +1,126 @@
+<html xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:p="http://primefaces.org/ui"
+>
+<h:head>
+    <title>Main page</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+
+</h:head>
+<h:body>
+    <div class="description">
+        <h1>Выполнил: Мольдон Антон Сергеевич, Группа: P3211, Вариант: 4139</h1>
+    </div>
+    <div class="top">
+        <div class="data_handler">
+            <h2>
+                Введите данные
+            </h2>
+            <h:form >
+                <p>
+                      X:
+                </p>
+                <div class="radio-container">
+                    <h:selectOneRadio id="radioX" value="#{row.x}" required="true" requiredMessage="Выберите значение X">
+                        <f:selectItem itemValue="-3" itemLabel="-3" />
+                        <f:selectItem itemValue="-2" itemLabel="-2" />
+                        <f:selectItem itemValue="-1" itemLabel="-1" />
+                        <f:selectItem itemValue="0" itemLabel="0" />
+                        <f:selectItem itemValue="1" itemLabel="1" />
+                        <f:selectItem itemValue="2" itemLabel="2" />
+                        <f:selectItem itemValue="3" itemLabel="3" />
+                        <f:ajax listener="#{row.setX}" />
+                    </h:selectOneRadio>
+                </div>
+                <p class="validXMessage">
+                    <h:message for="radioX" />
+                </p>
+
+
+
+
+                <p>
+                    Y:
+                </p>
+
+
+                <h:inputText id="yInput" class="yInput" value="#{row.y}" validatorMessage="Необходимо указать корректное значение Y" >
+                    <f:validateRegex pattern="^(-?\d+(\.\d{0,10})?)?$" />
+                    <f:validateDoubleRange minimum="-5" maximum="3" />
+                </h:inputText>
+                <p class="validYMessage">
+                    <h:message for="yInput"  />
+                </p>
+
+                <p>
+                      R:
+                </p>
+
+                <p:spinner id="rValue" value="#{row.r}" min="1" max="3" stepFactor="0.5" />
+
+
+
+                <p>
+                <h:commandButton class="button-submit" type="submit"
+                                 action="#{row.insert}" value="Отправить"/>
+                </p>
+
+
+            </h:form>
+
+                <h:form>
+                <p></p>
+            <h:commandButton class="button" type="submit"
+                                 action="#{row.clear}" value="Очистить"/>
+                </h:form>
+
+
+
+        </div>
+
+        <div class="graphik">
+            <h2>
+                График
+            </h2>
+            <canvas id="canvas">
+            </canvas>
+        </div>
+    </div>
+    <div class="result">
+        <table id="result-table">
+            <tr>
+                <th>X</th>
+                <th>Y</th>
+                <th>R</th>
+                <th>Результат</th>
+                <th>Время</th>
+                <th>Время выполнения скрипта</th>
+            </tr>
+            <ui:repeat value="#{row.getRows()}" var="stroka">
+                <tr>
+                    <td>#{stroka.x}</td>
+                    <td>#{stroka.y}</td>
+                    <td>#{stroka.r}</td>
+                    <td>#{stroka.isHit}</td>
+                    <td>#{stroka.currentTime}</td>
+                    <td>#{stroka.executionTime}</td>
+                </tr>
+            </ui:repeat>
+
+        </table>
+
+    </div>
+    <h:form>
+        <h:inputHidden id="xHidden" value="#{row.x}"></h:inputHidden>
+        <h:inputHidden id="yHidden" value="#{row.y}"></h:inputHidden>
+        <h:inputHidden id="rHidden" value="#{row.r}"></h:inputHidden>
+        <h:commandButton id="submitHidden" type="submit" style="visibility: hidden"
+                         action="#{row.insert}" value="Отправить"/>
+
+    </h:form>
+
+    <h:outputScript library="js" name="main.js"/>
+    <h:outputScript library="js" name="canvas.js"/>
+</h:body>
+</html>
