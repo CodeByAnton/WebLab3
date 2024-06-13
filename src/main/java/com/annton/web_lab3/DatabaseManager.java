@@ -2,6 +2,7 @@ package com.annton.web_lab3;
 
 
 
+import com.annton.web_lab3.entity.Result;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -9,7 +10,7 @@ import org.hibernate.cfg.Configuration;
 import java.util.List;
 
 public class DatabaseManager {
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
     DatabaseManager() {
         // Создание фабрики сессий на основе конфигурации Hibernate
@@ -19,13 +20,11 @@ public class DatabaseManager {
         sessionFactory = configuration.buildSessionFactory();
     }
 
-    public Result createRow(float x, float y, float r, String currentTime, String executionTime, boolean isHit) {
+    public Result createRow(float x, float y, float r, boolean isHit) {
         Result result = new Result();
         result.setX(x);
         result.setY(y);
         result.setR(r);
-        result.setCurrentTime(currentTime);
-        result.setExecutionTime(executionTime);
         result.setHit(isHit);
 
         return result;

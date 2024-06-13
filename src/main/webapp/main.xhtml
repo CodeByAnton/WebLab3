@@ -85,8 +85,13 @@
             </h2>
             <canvas id="canvas">
             </canvas>
+
+
         </div>
+
     </div>
+
+
     <div class="result">
         <table id="result-table">
             <tr>
@@ -94,8 +99,6 @@
                 <th>Y</th>
                 <th>R</th>
                 <th>Результат</th>
-                <th>Время</th>
-                <th>Время выполнения скрипта</th>
             </tr>
             <ui:repeat value="#{row.getRows()}" var="stroka">
                 <tr>
@@ -103,8 +106,6 @@
                     <td>#{stroka.y}</td>
                     <td>#{stroka.r}</td>
                     <td>#{stroka.isHit}</td>
-                    <td>#{stroka.currentTime}</td>
-                    <td>#{stroka.executionTime}</td>
                 </tr>
             </ui:repeat>
 

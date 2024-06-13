@@ -1,4 +1,4 @@
-package com.annton.web_lab3;
+package com.annton.web_lab3.entity;
 
 import jakarta.persistence.*;
 
@@ -10,23 +10,26 @@ public class Result {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "x")
     private float x;
+
+    @Column(name = "y")
     private float y;
+
+    @Column(name = "r")
     private float r;
-    private String currentTime;
-    private String executionTime;
+
+    @Column(name = "is_hit")
     private boolean isHit;
 
     // Конструкторы
     public Result() {
     }
 
-    public Result(float x, float y, float r, String currentTime, String executionTime, boolean isHit) {
+    public Result(float x, float y, float r,  boolean isHit) {
         this.x = x;
         this.y = y;
         this.r = r;
-        this.currentTime = currentTime;
-        this.executionTime = executionTime;
         this.isHit = isHit;
     }
 
@@ -63,21 +66,7 @@ public class Result {
         this.r = r;
     }
 
-    public String getCurrentTime() {
-        return currentTime;
-    }
 
-    public void setCurrentTime(String currentTime) {
-        this.currentTime = currentTime;
-    }
-
-    public String getExecutionTime() {
-        return executionTime;
-    }
-
-    public void setExecutionTime(String executionTime) {
-        this.executionTime = executionTime;
-    }
 
     public boolean isIsHit() {
         return isHit;
